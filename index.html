@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Vue</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <style>
+        .boxwrap {
+            display: flex;
+        }
+
+        .box {
+            background: gray;
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello Vue</h1>
+    <div id="app">
+        <div v-if="showBooks">
+            <p>{{ title }} - {{ author }} - {{ age }}</p>
+            <button v-on:click="age++">+</button>
+            <button v-on:click="age--">-</button>
+            <div @click="title = 'Very nicer book'">Change Book from index.html</div>
+            <div @click="changeTitle">Change Book from app.js</div>
+            <div @click="changeTitle('The best book ever, full stop')">Change Book by passing prop</div>
+        </div>
+        <button @click="toggleShowBooks">
+            <span v-if="showBooks">Hide Books</span>
+            <span v-else>Show Books</span>
+            <!-- <span v-if="!showBooks">Show Books</span> -->
+        </button>
+
+        <div v-show="showBooks">vshowing books (inspect dom, it is using css)</div>
+
+        <br />
+        <!-- Mouse events-->
+        <div class="boxwrap">
+            <div class="box" @mouseover="handleEvent($event, 5)">Mouseover (enter)</div>
+            <div class="box" @mouseleave="handleEvent">Mouseover (leave)</div>
+            <div class="box" @dblclick="handleEvent">Double Click</div>
+            <div class="box" @mousemove="handleMousemove">{{ x }} | {{ y }}</div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
