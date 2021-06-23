@@ -2,9 +2,14 @@ const app = Vue.createApp({
     data(){
         return {
         showBooks: true,
-        title: "Nice book",
-        author: "Piet Pompies",
-        age: 43,
+        books: [
+            {title: "nice book", author: "nice author"},
+            {title: "another nice book", author: "another nice author"},
+            {title: "yet another nice book", author: "yet another nice author"}
+        ],
+        // title: "Nice book",
+        // author: "Piet Pompies",
+        // age: 43,
         x:0,
         y:0
     }
