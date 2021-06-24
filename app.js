@@ -1,15 +1,16 @@
 const app = Vue.createApp({
     data(){
         return {
+        url: "https://www.google.com",
         showBooks: true,
         books: [
-            {title: "nice book", author: "nice author"},
-            {title: "another nice book", author: "another nice author"},
-            {title: "yet another nice book", author: "yet another nice author"}
+            {title: "nice book", author: "nice author", img: "assets/1.png"},
+            {title: "another nice book", author: "another nice author", img: "assets/2.jpg"},
+            {title: "yet another nice book", author: "yet another nice author", img: "assets/3.jpg"}
         ],
-        // title: "Nice book",
-        // author: "Piet Pompies",
-        // age: 43,
+        title: "Nice book",
+        author: "Piet Pompies",
+        age: 43,
         x:0,
         y:0
     }

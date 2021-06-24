@@ -23,6 +23,11 @@
 <body>
     <h1>Hello Vue</h1>
     <div id="app">
+
+        <!-- Attribute Binding -->
+        <a v-bind:href="url">Best Search Engine ever</a>
+        <a :href="url">Best Search Engine ever</a> <!-- SHORTHAND -->
+
         <div v-if="showBooks">
             <!-- <p>{{ title }} - {{ author }} - {{ age }}</p> -->
             <p>{{ books[0].title }} - {{ books[0].author }} </p>
@@ -31,6 +36,7 @@
             <!-- Or we can use the v-for -->
             <ul>
                 <li v-for="book in books">
+                    <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
                 </li>
@@ -38,7 +44,10 @@
 
             <button v-on:click="age++">+</button>
             <button v-on:click="age--">-</button>
-            <div @click="title = 'Very nicer book'">Change Book from index.html</div>
+
+
+            <div v-on:click="title = 'Very nicer book'">Change Book from index.html</div>
+            <div @click="title = 'Very nicer book'">Change Book from index.html</div><!-- SHORTHAND -->
             <div @click="changeTitle">Change Book from app.js</div>
             <div @click="changeTitle('The best book ever, full stop')">Change Book by passing prop</div>
         </div>
