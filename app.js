@@ -4,9 +4,9 @@ const app = Vue.createApp({
         url: "https://www.google.com",
         showBooks: true,
         books: [
-            {title: "nice book", author: "nice author", img: "assets/1.png"},
-            {title: "another nice book", author: "another nice author", img: "assets/2.jpg"},
-            {title: "yet another nice book", author: "yet another nice author", img: "assets/3.jpg"}
+            {title: "nice book", author: "nice author", img: "assets/1.png", isFav: true},
+            {title: "another nice book", author: "another nice author", img: "assets/2.jpg", isFav: true},
+            {title: "yet another nice book", author: "yet another nice author", img: "assets/3.jpg", isFav: false}
         ],
         title: "Nice book",
         author: "Piet Pompies",
