@@ -5,8 +5,8 @@ const app = Vue.createApp({
         showBooks: true,
         books: [
             {title: "nice book", author: "nice author", img: "assets/1.png", isFav: true},
-            {title: "another nice book", author: "another nice author", img: "assets/2.jpg", isFav: true},
-            {title: "yet another nice book", author: "yet another nice author", img: "assets/3.jpg", isFav: false}
+            {title: "another nice book", author: "another nice author", img: "assets/2.jpg", isFav: false},
+            {title: "yet another nice book", author: "yet another nice author", img: "assets/3.jpg", isFav: true}
         ],
         title: "Nice book",
         author: "Piet Pompies",
@@ -32,6 +32,9 @@ const app = Vue.createApp({
         handleMousemove(e) {
             this.x = e.offsetX
             this.y = e.offsetY
+        },
+        toggleFav(book){
+            book.isFav = !book.isFav
         }
     }
 }
