@@ -28,6 +28,9 @@
     <h1>Hello Vue</h1>
     <div id="app">
 
+        <!-- Copmuted Properties-->
+        <p>{{ filteredBooks }}</p>
+
         <!-- Attribute Binding -->
         <a v-bind:href="url">Best Search Engine ever</a>
         <a :href="url">Best Search Engine ever</a> <!-- SHORTHAND -->
@@ -39,7 +42,7 @@
             <p>{{ books[2].title }} - {{ books[2].author }} </p>
             <!-- Or we can use the v-for -->
             <ul>
-                <li v-for="book in books" :class="{ fav: book.isFav }" @click="toggleFav(book)">
+                <li v-for="book in filteredBooks" :class="{ fav: book.isFav }" @click="toggleFav(book)">
                     <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
