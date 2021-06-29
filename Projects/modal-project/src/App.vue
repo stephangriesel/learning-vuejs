@@ -1,9 +1,15 @@
 <template>
+<div>
   <h1>{{ title }}</h1>
   <input type="text" ref="name">
   <!-- <button @click="handleClick">Click me!</button> -->
-
-  <Modal />
+  <!-- Passing Props & Binding -->
+  <Modal 
+    :header="header" 
+    :text="text"
+    theme="sale"
+  /> 
+  </div>
 </template>
 
 <script>
@@ -17,7 +23,9 @@ export default {
   },
   data() {
     return {
-      title: 'My First Vue App, woohoooo!'
+      title: 'My First Vue App, woohoooo!',
+      header: "Join!",
+      text: "You are one of the lucky winners"
     }
   },
   methods: {
