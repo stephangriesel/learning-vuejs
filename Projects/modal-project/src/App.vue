@@ -16,6 +16,8 @@
   <!-- Emitting custom event: start -->
   <button @click="toggleModal">Show Modal</button>
   <!-- Emitting custom event: stop -->
+  <!-- Event modifiers -->
+  <button @click.shift="toggleModal">Show Modal(shift)</button>
   </div>
 </template>
 

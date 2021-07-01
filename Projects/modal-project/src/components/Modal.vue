@@ -1,6 +1,6 @@
 <template>
-    <!-- Emitting custom event: start -->
-    <div class="backdrop" @click="closeModal">
+    <!-- Emitting custom event: start & Event Modifier -->
+    <div class="backdrop" @click.self="closeModal">
     <!-- Emitting custom event: stop -->
         <div class="modal" :class="{ sale: theme === 'sale'}">
             <h1>{{ header }}</h1>
