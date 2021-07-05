@@ -11,7 +11,16 @@
         :text="text"
         theme="sale"
         @close="toggleModal"
-      /> 
+      />
+      <!-- Slots -->
+      <Modal>
+        <template v-slot:links>
+          <a href="#">Join</a>
+          <a href="#">More info</a>
+        </template>
+        <h1>Hello from slot</h1>
+        <p>What what whaaaaaat!</p>
+      </Modal>
   </div>
   <!-- Emitting custom event: start -->
   <button @click="toggleModal">Show Modal</button>

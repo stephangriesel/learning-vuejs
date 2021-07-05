@@ -5,6 +5,10 @@
         <div class="modal" :class="{ sale: theme === 'sale'}">
             <h1>{{ header }}</h1>
             <p>{{ text }}</p>
+            <slot></slot>
+            <div class="actions">
+                <slot name="links"></slot>
+            </div>
         </div>
     </div>
 </template>
