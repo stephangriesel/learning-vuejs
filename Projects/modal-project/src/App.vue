@@ -6,14 +6,14 @@
   <!-- Passing Props & Binding -->
   <!-- Emitting custom event: close -->
   <div v-if="showModal">
-      <Modal 
+      <!-- <Modal 
         :header="header" 
         :text="text"
         theme="sale"
         @close="toggleModal"
-      />
+      /> -->
       <!-- Slots -->
-      <Modal>
+      <Modal @close="toggleModal">
         <template v-slot:links>
           <a href="#">Join</a>
           <a href="#">More info</a>
@@ -22,8 +22,16 @@
         <p>What what whaaaaaat!</p>
       </Modal>
   </div>
+  <div v-if="showModalTwo">
+      <!-- Slots -->
+      <Modal @close="toggleModalTwo">
+        <h1>Hello from #2</h1>
+        <p>What what whaaaaaat AGAIN!</p>
+      </Modal>
+  </div>
   <!-- Emitting custom event: start -->
   <button @click="toggleModal">Show Modal</button>
+  <button @click="toggleModalTwo">Show Modal #2</button>
   <!-- Emitting custom event: stop -->
   <!-- Event modifiers -->
   <button @click.shift="toggleModal">Show Modal(shift)</button>
@@ -42,9 +50,10 @@ export default {
   data() {
     return {
       title: 'My First Vue App, woohoooo!',
-      header: "Join!",
-      text: "You are one of the lucky winners",
-      showModal: false
+      // header: "Join!",
+      // text: "You are one of the lucky winners",
+      showModal: false,
+      showModalTwo:false
     }
   },
   methods: {
@@ -55,6 +64,9 @@ export default {
     },
     toggleModal(){
             this.showModal = !this.showModal
+        },
+    toggleModalTwo(){
+            this.showModalTwo = !this.showModalTwo
         },
   }
 }
