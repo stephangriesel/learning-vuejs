@@ -5,7 +5,7 @@
   <!-- <button @click="handleClick">Click me!</button> -->
   <!-- Passing Props & Binding -->
   <!-- Emitting custom event: close -->
-  <div v-if="showModal">
+  <teleport to=".modals" v-if="showModal">
       <!-- <Modal 
         :header="header" 
         :text="text"
@@ -21,7 +21,7 @@
         <h1>Hello from slot</h1>
         <p>What what whaaaaaat!</p>
       </Modal>
-  </div>
+  </teleport>
   <div v-if="showModalTwo">
       <!-- Slots -->
       <Modal @close="toggleModalTwo">
@@ -73,7 +73,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, .modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
