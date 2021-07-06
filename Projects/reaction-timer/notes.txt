@@ -1,0 +1,18 @@
+1. Create new project:
+eg. vue create reaction-timer
+
+2. Manually select features
+* Choose Vue Version
+* Babel
+
+3. Choose Version 3
+
+4. Choose dedicated config file, choose no for future projects
+
+5. Clean up
+- remove hello world component
+- clean template in app.vue
+- remove imports in app.vue
+
+6. run npm run serve
+
