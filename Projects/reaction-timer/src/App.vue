@@ -1,17 +1,20 @@
 <template>
+<div class="wrapper">
 <h1>Hello Reaction Timer</h1>
 <button @click="start" :disabled="isPlaying">Play</button>
 <Block v-if="isPlaying" :delay="delay" @end="endGame"/>
-<span v-if="showResults">Reaction Time: {{ score }} ms</span>
+<Results v-if="showResults" :score="score"/>
+</div>
 </template>
 
 <script>
 
 import Block from './components/Block.vue'
+import Results from './components/Results.vue'
 
 export default {
   name: 'App',
-  components: { Block },
+  components: { Block, Results },
   data() {
     return {
       isPlaying: false,
@@ -37,6 +40,9 @@ export default {
 </script>
 
 <style>
+.wrapper {
+  text-align: center;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
