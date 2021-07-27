@@ -1,10 +1,12 @@
 <template>
   <div>
-  <form>
+  <form @submit.prevent="handleSubmit">
     <label>Email:</label>
     <input type="email" required v-model="email">
     <label>Password:</label>
     <input type="password" required v-model="password">
+    <div v-if="passwordError" class="error">{{ passwordError }}</div>
+
     <label>Role: </label>
     <select v-model="role">
       <option value="none">Choose Your Role</option>
@@ -21,6 +23,10 @@
     <div class="terms">
       <input type="checkbox" required v-model="terms">
       <label for="">Accept Terms and Conditions</label>
+    </div>
+
+    <div class="submit">
+      <button>Create Account</button>
     </div>
 
     <!-- leaving here for reference -->
@@ -56,7 +62,8 @@ export default {
       terms:false,
       names:[],
       tempSkill:'',
-      skills: []
+      skills: [],
+      passwordError:''
     }
   },
   methods: {
@@ -73,6 +80,21 @@ export default {
       this.skills = this.skills.filter((item) => {
         return skill !== item
       })
+    },
+    handleSubmit(){
+      console.log("Form submitted data: ", )
+      // validate password
+      this.passwordError = this.password.length > 5 ? 
+      '' : 'Password too short'
+
+      if(!this.passwordError) {
+        console.log("Email: ", this.email)
+        console.log("Password: ", this.password)
+        console.log("Role: ", this.role)
+        console.log("Skills: ", this.skills)
+        console.log("Terms accepted: ", this.terms)
+      }
+
     }
   },
 }
@@ -126,6 +148,24 @@ input[type="checkbox"]{
   font-weight: bold;
   color:#777;
   cursor:pointer;
+}
+button {
+  background: #0b6dff;
+  border:0;
+  padding:10px 20px;
+  margin-top:20px;
+  color:white;
+  border-radius:20px;
+}
+
+.submit {
+  text-align: center;
+}
+.error {
+  color:red;
+  margin:10px 0;
+  font-weight:bold;
+  font-size:0.8em;
 }
 
 </style>
