@@ -8,6 +8,7 @@ export default {
     // validate data and set condition based on properties received
     console.log(data);
     return data.params.id == 1;
-  }
+  },
+  layout: "users"
 };
 </script>
