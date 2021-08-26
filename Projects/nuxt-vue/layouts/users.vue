@@ -1,6 +1,5 @@
 <template>
   <div>
-    <header>USERS LAYOUT</header>
     <nuxt />
   </div>
 </template>
@@ -10,3 +9,5 @@ body {
   color: red;
 }
 </style>
+
+<script></script>
