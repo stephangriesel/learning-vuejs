@@ -4,30 +4,24 @@
       <h1>The Latest</h1>
     </section>
     <section class="featured-posts">
-      <nuxt-link :to="`/posts/` + 1" class="post-preview">
-        <article>
-          <div
-            class="post-thumbnail"
-            style="background-image: url(https://i.stack.imgur.com/AZUmQ.jpg)"
-          ></div>
-          <div class="post-content">
-            <h1>Post Title</h1>
-            <p>Preview Text</p>
-          </div>
-        </article>
-      </nuxt-link>
-      <nuxt-link :to="`/posts/` + 2" class="post-preview">
-        <article>
-          <div
-            class="post-thumbnail"
-            style="background-image: url(https://i.stack.imgur.com/AZUmQ.jpg)"
-          ></div>
-          <div class="post-content">
-            <h1>Post Title</h1>
-            <p>Preview Text</p>
-          </div>
-        </article>
-      </nuxt-link>
+      <PostPreview
+        id="1"
+        thumbnail="https://i.stack.imgur.com/AZUmQ.jpg"
+        title="Javascript"
+        previewText="Yes this is Javascript"
+      />
+      <PostPreview
+        id="2"
+        thumbnail="https://miro.medium.com/max/1400/1*Fp43zS64ZPoWi4IAz1n3MA.jpeg"
+        title="Jquery"
+        previewText="Urgh, this is Jquery"
+      />
+      <PostPreview
+        id="3"
+        thumbnail="https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
+        title="VueJS"
+        previewText="This is VueJS, wooohoooo"
+      />
     </section>
   </div>
 </template>
@@ -71,40 +65,13 @@
   align-items: center;
   justify-content: center;
 }
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
-}
 </style>
+
+<script>
+import PostPreview from "~/components/posts/PostPreview";
+export default {
+  components: {
+    PostPreview
+  }
+};
+</script>
