@@ -1,7 +1,7 @@
 <template>
   <div class="admin-new-post-page">
     <section class="new-post-form">
-      <form>
+      <form @submit.prevent="onSave">
         <AppControlInput v-model="editedPost.author"
           >Author Name</AppControlInput
         >
@@ -31,7 +31,14 @@
 </template>
 
 <script>
+import AppControlInput from "../../../components/UI/AppControlInput.vue";
+import AppButton from "../../../components/UI/AppButton.vue";
+
 export default {
+  components: {
+    AppControlInput,
+    AppButton
+  },
   data() {
     return {
       editedPost: {
@@ -41,6 +48,16 @@ export default {
         content: ""
       }
     };
+  },
+  methods: {
+    onSave() {
+      // save the post
+      console.log(this.editedPost);
+    },
+    onCancel() {
+      // return to main page
+      this.$router.push("/admin");
+    }
   }
 };
 </script>
