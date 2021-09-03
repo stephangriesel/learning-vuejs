@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>The Latest</h1>
     </section>
-    <PostList />
+    <PostList posts="loadedPosts" />
   </div>
 </template>
 
@@ -54,6 +54,26 @@ import PostList from "~/components/posts/PostList";
 export default {
   components: {
     PostList
+  },
+  data() {
+    return {
+      loadedPosts: [
+        {
+          id: "1",
+          thumbnail:
+            "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png",
+          title: "First Posts",
+          previewText: "First Post"
+        },
+        {
+          id: "2",
+          thumbnail:
+            "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png",
+          title: "Second Posts",
+          previewText: "Second Post"
+        }
+      ]
+    };
   }
 };
 </script>

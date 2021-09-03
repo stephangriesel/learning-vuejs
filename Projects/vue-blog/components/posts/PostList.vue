@@ -1,25 +1,13 @@
 <template>
   <section class="post-list">
     <PostPreview
-      id="1"
-      v-bind:is-admin="isAdmin"
-      thumbnail="https://i.stack.imgur.com/AZUmQ.jpg"
-      title="Javascript"
-      previewText="Yes this is Javascript"
-    />
-    <PostPreview
-      id="2"
-      v-bind:is-admin="isAdmin"
-      thumbnail="https://miro.medium.com/max/1400/1*Fp43zS64ZPoWi4IAz1n3MA.jpeg"
-      title="Jquery"
-      previewText="Urgh, this is Jquery"
-    />
-    <PostPreview
-      id="3"
-      v-bind:is-admin="isAdmin"
-      thumbnail="https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
-      title="VueJS"
-      previewText="This is VueJS, wooohoooo"
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
+      :is-admin="isAdmin"
+      :thumbnail="post.thumbnail"
+      :title="post.title"
+      :previewText="post.previewText"
     />
   </section>
 </template>
@@ -37,7 +25,9 @@ export default {
     isAdmin: {
       type: Boolean,
       default: false
-    }
+    },
+    posts: Array,
+    required: true
   }
 };
 </script>
