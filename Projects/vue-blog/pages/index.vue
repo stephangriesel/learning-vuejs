@@ -55,25 +55,33 @@ export default {
   components: {
     PostList
   },
-  data() {
-    return {
-      loadedPosts: [
-        {
-          id: "1",
-          title: "First Post",
-          previewText: "First Post",
-          thumbnail:
-            "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
-        },
-        {
-          id: "2",
-          title: "Second Post",
-          previewText: "Second Post",
-          thumbnail:
-            "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
-        }
-      ]
-    };
-  }
+  asyncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: [
+          {
+            id: "1",
+            title: "First Post",
+            previewText: "First Post",
+            thumbnail:
+              "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
+          },
+          {
+            id: "2",
+            title: "Second Post",
+            previewText: "Second Post",
+            thumbnail:
+              "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
+          }
+        ]
+      });
+    }, 5500);
+  },
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   };
+  // },
+  created() {}
 };
 </script>
