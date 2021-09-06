@@ -26,8 +26,10 @@ export default {
       type: Boolean,
       default: false
     },
-    posts: Array,
-    required: true
+    posts: {
+      type: Array,
+      required: true
+    }
   }
 };
 </script>

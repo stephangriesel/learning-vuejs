@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>The Latest</h1>
     </section>
-    <PostList posts="loadedPosts" />
+    <PostList :posts="loadedPosts" />
   </div>
 </template>
 
@@ -60,17 +60,17 @@ export default {
       loadedPosts: [
         {
           id: "1",
+          title: "First Post",
+          previewText: "First Post",
           thumbnail:
-            "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png",
-          title: "First Posts",
-          previewText: "First Post"
+            "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
         },
         {
           id: "2",
+          title: "Second Post",
+          previewText: "Second Post",
           thumbnail:
-            "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png",
-          title: "Second Posts",
-          previewText: "Second Post"
+            "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
         }
       ]
     };
