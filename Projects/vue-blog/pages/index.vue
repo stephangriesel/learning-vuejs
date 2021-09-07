@@ -76,7 +76,7 @@ export default {
           }
         ]
       });
-    }, 5500);
+    }, 1000);
   },
   // data() {
   //   return {
