@@ -11,40 +11,10 @@ export default {
   components: {
     PostList
   },
-  asyncData(context) {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve({
-          loadedPosts: [
-            {
-              id: "1",
-              title: "First Post",
-              previewText: "First Post",
-              thumbnail:
-                "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
-            },
-            {
-              id: "2",
-              title: "Second Post",
-              previewText: "Second Post",
-              thumbnail:
-                "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
-            }
-          ]
-        });
-      }, 1000);
-      // reject(new Error());
-    })
-      .then(data => {
-        return data;
-      })
-      .catch(e => {
-        context.error(e);
-      });
-  },
-  created() {
-    this.$store.dispatch("setPosts", this.loadedPosts);
-    console.log("see store getters details:", this.$store.getters.loadedPosts);
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    }
   }
 };
 </script>
