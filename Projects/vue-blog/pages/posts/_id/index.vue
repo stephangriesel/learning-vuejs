@@ -17,23 +17,18 @@
 </template>
 
 <script>
+
+import axios from 'axios'
+
 export default {
-  asyncData(context, callback) {
-    console.log("dynamic post context:", context);
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: "1",
-          title: "First Post (ID: " + context.params.id + ")",
-          previewText: "First Post",
-          author: "Stephan",
-          updatedDate: new Date(),
-          content: "Random text which is the full text. Not preview text.",
-          thumbnail:
-            "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
-        }
-      });
-    }, 1000);
+  asyncData(context) {
+    return axios.get('https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app/posts/' + context.params.id + '.json')
+    .then(res => {
+      return {
+        loadedPost: res.data
+      }
+    })
+    .catch(e => context.error(e))
   }
 };
 </script>

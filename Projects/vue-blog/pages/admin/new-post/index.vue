@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     onSubmitted(postData){
-      axios.post('backendurlgoeshere', postData)
+      axios.post('https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app/posts.json', {...postData, updatedDate: new Date()})
       .then(result => console.log(result))
       .catch(e => console.log(e))
     }
