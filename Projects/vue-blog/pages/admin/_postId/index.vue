@@ -8,22 +8,22 @@
 
 <script>
 import AdminPostForm from "~/components/Admin/AdminPostForm.vue";
+import axios from 'axios'
 
 export default {
   layout: "admin",
   components: {
     AdminPostForm
   },
-  data() {
-    return {
-      loadedPost: {
-        author: "Stephan",
-        title: "First post",
-        content: "Very nice post",
-        thumbnailLink:
-          "https://code.visualstudio.com/assets/docs/nodejs/vuejs/javascript-suggestions.png"
+  asyncData(context){
+    return axios.get('https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app/posts/' + context.params.postId + '.json')
+    .then(res => {
+      return{
+        loadedPost: res.data
       }
-    };
+      
+    })
+    .catch(e => context.error());
   }
 };
 </script>
