@@ -1,7 +1,7 @@
 <template>
   <div class="admin-post-page">
     <div class="update-form">
-      <AdminPostForm :post="loadedPost" />
+      <AdminPostForm :post="loadedPost" @submit="onSubmitted"/>
     </div>
   </div>
 </template>
@@ -24,6 +24,15 @@ export default {
       
     })
     .catch(e => context.error());
+  },
+  methods: {
+    onSubmitted(editedPost){
+      axios.put('https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app/posts/' + this.$route.params.postId + '.json', editedPost)
+      .then(res => {
+        this.$router.push('/admin')
+      })
+      .catch(e => console.log(err))
+    }
   }
 };
 </script>
