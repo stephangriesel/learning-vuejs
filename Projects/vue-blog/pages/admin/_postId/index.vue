@@ -19,7 +19,7 @@ export default {
     return axios.get('https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app/posts/' + context.params.postId + '.json')
     .then(res => {
       return{
-        loadedPost: res.data
+        loadedPost: {...res.data, id: context.params.postId}
       }
       
     })
@@ -27,11 +27,10 @@ export default {
   },
   methods: {
     onSubmitted(editedPost){
-      axios.put('https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app/posts/' + this.$route.params.postId + '.json', editedPost)
-      .then(res => {
+      this.$store.dispatch('editPost', editedPost)
+      .then(() => {
         this.$router.push('/admin')
       })
-      .catch(e => console.log(err))
     }
   }
 };
