@@ -1,7 +1,7 @@
 <template>
   <div class="admin-post-page">
     <div class="update-form">
-      <AdminPostForm :post="loadedPost" />
+      <AdminPostForm :post="loadedPost" @submit="onSubmitted"/>
     </div>
   </div>
 </template>
@@ -19,11 +19,19 @@ export default {
     return axios.get(process.env.baseUrl + '/posts/' + context.params.postId + '.json')
     .then(res => {
       return{
-        loadedPost: res.data
+        loadedPost: {...res.data, id: context.params.postId}
       }
       
     })
     .catch(e => context.error());
+  },
+  methods: {
+    onSubmitted(editedPost){
+      this.$store.dispatch('editPost', editedPost)
+      .then(() => {
+        this.$router.push('/admin')
+      })
+    }
   }
 };
 </script>

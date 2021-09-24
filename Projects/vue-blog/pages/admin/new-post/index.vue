@@ -7,7 +7,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import AdminPostForm from "~/components/Admin/AdminPostForm.vue";
 
 export default {
@@ -17,9 +16,9 @@ export default {
   },
   methods: {
     onSubmitted(postData){
-      axios.post('https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app/posts.json', {...postData, updatedDate: new Date()})
-      .then(result => console.log(result))
-      .catch(e => console.log(e))
+      this.$store.dispatch("addPost", postData).then(() => {
+        this.$router.push("admin");
+      })
     }
   }
 };
