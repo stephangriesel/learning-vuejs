@@ -22,6 +22,18 @@ export default {
     ]
   },
 
+  // Progress bar color //
+  loading: {
+    color: 'yellow',
+    height: '2px',
+    throttle: 0
+   },
+
+  //  loadingIndicator: {  >> // Only works in spa mode
+  //    name:'circle',
+  //    color:'#797979',
+  //  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [],
 
