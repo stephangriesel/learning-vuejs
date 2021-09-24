@@ -35,7 +35,9 @@ export default {
   //  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    // '~assets/styles/main.css' // define styles globally
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -50,5 +52,10 @@ export default {
   modules: [],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+
+  // Environment variables
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app'
+  }
 };
