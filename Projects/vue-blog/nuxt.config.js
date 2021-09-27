@@ -36,7 +36,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // '~assets/styles/main.css' // define styles globally
+    '~assets/styles/main.css' // define styles globally
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -57,5 +57,9 @@ export default {
   // Environment variables
   env: {
     baseUrl: process.env.BASE_URL || 'https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app'
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   }
 };
