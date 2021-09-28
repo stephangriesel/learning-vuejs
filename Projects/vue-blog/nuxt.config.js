@@ -52,7 +52,13 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    '@nuxtjs/axios'
+  ],
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app',
+    credentials: false
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
