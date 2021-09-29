@@ -65,7 +65,8 @@ export default {
 
   // Environment variables
   env: {
-    baseUrl: process.env.BASE_URL || 'https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app'
+    baseUrl: process.env.BASE_URL || 'https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app',
+    fbAPIKey: `AIzaSyBU1ViB4enkGr_gBBgh1MeBwRgTRMwyJaE`
   },
   transition: {
     name: 'fade',
