@@ -5,8 +5,8 @@ var app = new Vue({
         desc: 'Nice shiny socks',
         image: './assets/vmSocks-green.png',
         href: 'http://www.google.com',
-        inventory: 2,
-        onStock: true,
+        inventory: 0,
+        onStock: false,
         onSale: true,
         details: ["80% cotton","20% polyester","Gender-neutral"],
         variants: [

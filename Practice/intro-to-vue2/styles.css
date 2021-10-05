@@ -40,3 +40,17 @@ button {
     color:white;
     margin:1em;
 }
+
+.disabledButton {
+    background:gray;
+}
+
+.color-box {
+    width:40px;
+    height:40px;
+    margin-top: 5px;
+}
+
+.strikeThrough {
+    text-decoration: line-through;
+}
