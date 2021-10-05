@@ -7,6 +7,18 @@ var app = new Vue({
         href: 'http://www.google.com',
         inventory: 2,
         onStock: true,
-        onSale: true
+        onSale: true,
+        details: ["80% cotton","20% polyester","Gender-neutral"],
+        variants: [
+            {
+                variantId: 1234,
+                variantColor: "green"
+            },
+            {
+                variantId: 1235,
+                variantColor: "red"
+            }
+        ],
+        sizes: ["small", "medium", "large"]
     }
 })
