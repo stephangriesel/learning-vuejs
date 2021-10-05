@@ -29,3 +29,14 @@
 img {
     width:10em;
 }
+
+.flex {
+    display:flex;
+}
+
+button {
+    border:none;
+    background: blue;
+    color:white;
+    margin:1em;
+}
