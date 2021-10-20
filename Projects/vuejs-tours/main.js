@@ -37,7 +37,14 @@ let app = new Vue({
             console.log("get event data",event);
             const tour = this.tours[index]
             tour.likes++
-            console.log(tour.likes)
+            console.log("tour like:", tour.likes)
+        },
+        addLike(tour){
+            console.log("add like: ",tour)
+        },
+        removeLike(tour,event){
+            console.log("remove like:",tour)
+            console.log("remove like event:",event)
         }
     }
 })

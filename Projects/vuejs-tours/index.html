@@ -48,6 +48,16 @@
                 {{tour.likes}}
             </div>
         </div>
+        <!-- like tour left click dislike right click -->
+        <div class="tours" v-for="tour in tours">
+            <h1>{{tour.title.toLowerCase()}}</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <div>Like
+                <i class="fas fa-heart fa-lg fa-fw" @click.left="addLike(tour)" @click.right="removeLike(tour, $event)">
+                </i>
+                {{tour.likes}}
+            </div>
+        </div>
     </div>
 </body>
 
