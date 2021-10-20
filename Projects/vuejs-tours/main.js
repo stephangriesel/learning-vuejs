@@ -9,9 +9,9 @@ let app = new Vue({
         // titleHTML: "VueJS <span class='badge'>Tours</span>",
         alert: "This is an alert message! ",
         tours: [
-            {title: "Rembrandt Tour", places: ["Rembrandt House", "Paint Spot", "De Waag Castle"]},
-            {title: "Tulp Tour", places: ["Tulp House", "Tulp Scene", "De Waag Castle"]},
-            {title: "Bridges Tour", places: ["Magere", "Kerk Straat", "Wall Bridge"]},
+            {title: "Rembrandt Tour", places: ["Rembrandt House", "Paint Spot", "De Waag Castle"], likes:0 },
+            {title: "Tulp Tour", places: ["Tulp House", "Tulp Scene", "De Waag Castle"], likes:0},
+            {title: "Bridges Tour", places: ["Magere", "Kerk Straat", "Wall Bridge"], likes:0},
         ], 
         dynamicId: 'tour_section',
         dynamicClass: 'tours',
