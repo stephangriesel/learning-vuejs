@@ -36,11 +36,14 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    // '~assets/styles/main.css' // define styles globally
+    '~assets/styles/main.css' // define styles globally
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '~plugins/core-components.js',
+    '~plugins/date-filter.js'
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -49,13 +52,27 @@ export default {
   buildModules: [],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: [
+    '@nuxtjs/axios'
+  ],
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app',
+    credentials: false
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
 
   // Environment variables
   env: {
-    baseUrl: process.env.BASE_URL || 'https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app'
-  }
+    baseUrl: process.env.BASE_URL || 'https://vue-blog-a3fc2-default-rtdb.europe-west1.firebasedatabase.app',
+    fbAPIKey: `AIzaSyBU1ViB4enkGr_gBBgh1MeBwRgTRMwyJaE`
+  },
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
+  // router: {
+  //   middleware: 'log'
+  // } 
 };

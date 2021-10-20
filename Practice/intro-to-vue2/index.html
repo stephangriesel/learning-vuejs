@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Intro to Vue2</title>
+  </head>
+  <body>
+    <div class="nav-bar"></div>
+    <div id="app">
+      <div class="product">
+        <div class="product-image">
+          <img v-bind:src="image" />
+        </div>
+        <div class="product-info">
+          <h1><a :href="href">{{ product }}</a></h1>
+          <p>{{ desc }}</p>
+          <p v-if="inventory > 10">In Stock</p>
+          <p v-else-if="inventory<= 10 && inventory > 0">Almost sold out!</p>
+          <p v-else>Out Of Stock</p>
+          <p 
+            v-if="onStock"
+            >
+          In Stock
+        </p>
+          <p 
+            v-else="onStock === false"
+            :class="{ strikeThrough: !onStock }"
+          >
+          Out of Stock</p>
+          <p v-if="onSale">On Sale</p>
+
+          <ul>
+            <li v-for="detail in details">{{ detail }}</li>
+          </ul>
+
+          <div v-for="variant in variants" 
+            :key="variant.variantId"
+            class="color-box"
+            :style="{ backgroundColor: variant.variantColor }"
+            @mouseover="updateProduct(variant.variantImage)"
+            >
+          </div>
+
+          <ul>
+            <li v-for="size in sizes">{{ size }}</li>
+          </ul>
+
+          <div class="flex">
+            <button 
+              v-on:click="addToCart" 
+              :class="{ disabledButton: !onStock }"
+              :disabled="!onStock">Add To Cart</button>
+
+            <div class="cart">
+              <p>Cart({{cart}})</p>
+            </div>
+          </div>
+
+          <!-- <div class="flex">
+            <button v-on:click="decreaseCart">Decrease Cart</button>
+
+            <div class="cart">
+              <p>Cart({{cart}})</p>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+#app {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display:flex;
+    justify-content: center;
+}
+
+.nav-bar {
+    background: rgb(34,193,195);
+    background: linear-gradient(86deg, rgba(34,193,195,1) 0%, rgba(70,142,95,1) 79%);
+    height:5em;
+}
+
+.product {
+    display:flex;
+
+}
+
+.product-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.product-image {
+    margin:2em;
+}
+
+img {
+    width:10em;
+}
+
+.flex {
+    display:flex;
+}
+
+button {
+    border:none;
+    background: blue;
+    color:white;
+    margin:1em;
+}
+
+.disabledButton {
+    background:gray;
+}
+
+.color-box {
+    width:40px;
+    height:40px;
+    margin-top: 5px;
+}
+
+.strikeThrough {
+    text-decoration: line-through;
+}
