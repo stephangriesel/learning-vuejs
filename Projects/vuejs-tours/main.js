@@ -41,10 +41,28 @@ let app = new Vue({
         },
         addLike(tour){
             console.log("add like: ",tour)
+            const tourTitle = tour.title;
+            if(!localStorage.getItem(tourTitle)){ //  check to see if there is a key in the localStorage matching tour title
+                tour.likes++; // if false run inside if block & increment
+                localStorage.setItem(tourTitle,true) // set key-value pair with tour title and boolean to localstorage
+            }
         },
         removeLike(tour,event){
+            event.preventDefault(); // else right menu pops up
+            const tourTitle = tour.title;
+            if(tour.likes > 0 && localStorage.getItem(tourTitle)){
+                tour.likes--;
+                localStorage.removeItem(tourTitle)
+            }
             console.log("remove like:",tour)
             console.log("remove like event:",event)
         }
+    },
+    mounted(){
+        this.tours.forEach(tour => {
+            if(localStorage.getItem(tour.title) !== null) {
+                tour.likes = 1; 
+            }
+        });
     }
 })
