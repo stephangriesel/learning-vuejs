@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>VueJS Tours</title>
+
+    <!-- vue development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ name }} {{ title }}</h1>
+        <h2 v-if="temp > 21">{{tourTitle}}</h2>
+        <h2 v-else-if="temp > 18 && temp < 21"> {{ tourTitle }} | Bring a sweater</h2>
+        <p v-else>Not the best day for tour outside</p>
+        <!-- <div v-html="titleHTML"></div>  -->
+        <div v-bind:class="dynamicClass" v-bind:id="dynamicId">Dynamically assign to class and ID</div>
+        <button v-bind:disabled="disabled">You can't click here</button>
+        <div>
+            <a v-bind:[attribute_name]="url">Visit my Website</a>
+        </div>
+        <div>
+            <a v-on:[event_name]="runFunction">Some link</a>
+        </div>
+        <div>
+            {{ getFullName() }}
+        </div>
+        <ul>
+            <li v-for="tour in tours" :key="tour.title">
+                {{ tour.title }}
+            </li>
+        </ul>
+        <div class="tours" v-for="(tour,index) in tours">
+            <h1>{{tour.title.toUpperCase()}}</h1>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <div>Like
+                <i class="fas fa-heart fa-lg fa-fw" @click="likeTour(index, $event)">
+                </i>
+                {{tour.likes}}
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="./main.js"></script>
+
+</html>
