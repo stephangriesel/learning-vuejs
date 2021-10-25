@@ -59,6 +59,30 @@
                 {{tour.likes}}
             </div>
         </div>
+
+        <!-- Two way data binding -->
+        <!-- <div>
+            <h2>Update your fans</h2>
+            <input type="text" v-model="tweet">
+            <p>{{ tweet }}</p>
+        </div> -->
+
+        <div>
+            <h2>Update box</h2>
+            <form v-on:submit.prevent="submitData">
+                <div class="form_group">
+                    <label for="name">Update</label>
+                    <textarea name="update" id="update" cols="80" rows="10" maxlength="200" v-model="update"></textarea>
+                </div>
+                <button type="submit">Update</button>
+            </form>
+            <div>
+                <span v-if="update.length < max_length"> {{ `Max: ${update.length} of ${max_length} characters` }}
+                </span>
+                <span class="errorMessage" v-else>{{`Max char limit reached! excess chars: ${max_length -
+                    update.length}`}}</span>
+            </div>
+        </div>
     </div>
 </body>
 

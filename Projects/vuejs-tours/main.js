@@ -1,4 +1,5 @@
-let whatTemp = Number(prompt("What is the temperature?"))
+// let whatTemp = Number(prompt("What is the temperature?"))
+let whatTemp = 33
 let app = new Vue({
     el:"#app",
     data: {
@@ -24,7 +25,10 @@ let app = new Vue({
         event_name: "click",
         tourTitle: "Steph's Tours is on like donkey kong",
         showTitle: true,
-        temp: whatTemp
+        temp: whatTemp,
+        update:"",
+        updates:[],
+        max_length:200,
     },
     methods: {
         runFunction(){
@@ -56,6 +60,9 @@ let app = new Vue({
             }
             console.log("remove like:",tour)
             console.log("remove like event:",event)
+        },
+        submitData(){
+
         }
     },
     mounted(){
