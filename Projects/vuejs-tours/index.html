@@ -82,6 +82,12 @@
                 <span class="errorMessage" v-else>{{`Max char limit reached! excess chars: ${max_length -
                     update.length}`}}</span>
             </div>
+
+            <ul>
+                <li v-for="update in updates">
+                    {{ update }}
+                </li>
+            </ul>
         </div>
     </div>
 </body>

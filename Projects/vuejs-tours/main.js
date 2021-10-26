@@ -62,7 +62,10 @@ let app = new Vue({
             console.log("remove like event:",event)
         },
         submitData(){
-
+            if (this.update.length <= this.max_length){
+                this.updates.unshift(this.update);
+                this.update = '';
+            }
         }
     },
     mounted(){
