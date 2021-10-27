@@ -30,6 +30,15 @@ let app = new Vue({
         updates:[],
         max_length:200,
     },
+    computed: {
+        maxCharsText: function(){
+            return `Max: ${this.update.length} of ${this.max_length} characters`
+        }, 
+        errorMessage: function(){
+            return `Max char limit reached! excess chars: ${this.max_length -
+                this.update.length}`
+        }
+    },
     methods: {
         runFunction(){
             console.log("test click function")

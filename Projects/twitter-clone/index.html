@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple update clone</title>
+    <!-- CDN Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
+
+    <!-- VueJS development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Style sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Register an account -->
+        <div class="card">
+            <i class="fab fa-twitter fa-lg fa-fw"></i>
+
+            <h2>Create your account</h2>
+            <form v-on:submit.prevent="registerAccount">
+                <div class="form_group">
+                    <label for="name">Name
+                        <span> {{ name.length + '/' + max_length }}</span>
+                    </label>
+                    <input type="text" v-model="name" :maxlength="max_length">
+                </div>
+                <div class="form_group">
+                    <label for="email">Email
+                        <span> {{ email.length + '/' + max_length }}</span>
+                    </label>
+                    <input type="email" v-model="email" :maxlength="max_length">
+                </div>
+                <div class="form_group">
+                    <label for="password">Password
+                        <span> {{ password.length + '/' + max_pass_length }}</span>
+                    </label>
+                    <input type="password" v-model="password" :maxlength="max_pass_length">
+                </div>
+                <button type="submit">Register</button>
+            </form>
+
+        </div>
+
+        <div v-if="error.length > 0">{{ error }}</div>
+
+        <!-- Add a tweet -->
+
+        <!-- Show all tweets -->
+
+    </div>
+    <!-- Link our main.js file -->
+    <script src="./main.js"></script>
+</body>
+
+</html>

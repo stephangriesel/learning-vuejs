@@ -83,6 +83,14 @@
                     update.length}`}}</span>
             </div>
 
+            <div>
+                <h3>Cleaner Version</h3>
+                <span v-if="update.length < max_length"> {{ maxCharsText }}
+                </span>
+                <span class="errorMessage" v-else>{{errorMessage}}</span>
+
+            </div>
+
             <ul>
                 <li v-for="update in updates">
                     {{ update }}
