@@ -8,8 +8,11 @@ let app = new Vue({
         password: "",
         max_length: 25,
         max_pass_length: 16, 
+        max_update: 200,
         error: "",
         registered: false,
+        updateMsg: "",
+        update: []
     },
     methods: {
         registerAccount(){
@@ -32,7 +35,40 @@ let app = new Vue({
             this.name = "";
             this.email = "";
             this.password = "";
+        },
+        sendUpdate(){
+            /* Store the tweet in the tweets property */
+            this.updates.unshift(
+                {
+                    text: this.updateMsg,
+                    date: new Date().toLocaleTimeString()
+                }
+        
+            );
+            /* Empty the updateMsg property */
+            this.updateMsg = "";
+            //console.log(this.updates);
+        
+            /* Tranform the object into a string  */
+            stringUpdates = JSON.stringify(this.updates)
+            console.log("convert to update string: ",stringUpdates);
+        
+            /* Add to the local storage the stringified tweet object */
+            localStorage.setItem('simple_update_updates', stringUpdates)
+        },
+       
+    },
+
+    created(){
+        /* Check if the user is registered and set the registered to true */
+        if(localStorage.getItem("simple_update_registered") === 'true'){
+            this.registered = true;
         }
+        // repopulate the userData object
+         if(localStorage.getItem('simple_update_registered_user')) {
+                this.userData = JSON.parse(localStorage.getItem('simple_update_registered_user'))
+            }
+    
     }
 
 });

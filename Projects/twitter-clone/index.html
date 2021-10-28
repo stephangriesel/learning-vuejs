@@ -21,10 +21,11 @@
         <!-- Register an account -->
         <div class="card">
             <i class="fab fa-twitter fa-lg fa-fw"></i>
-
-            <h2>Create your account</h2>
-            <div class="registered" v-if="!registered">
-                <form v-on:submit.prevent="registerAccount">
+            <!-- Register an account -->
+            <div class="register" v-if="!registered">
+                <button form="register" type="submit">Register</button>
+                <h2>Create your account</h2>
+                <form id="register" v-on:submit.prevent="registerAccount">
                     <div class="form_group">
                         <label for="name">Name
                             <span> {{ name.length + '/' + max_length }}</span>
@@ -43,17 +44,28 @@
                         </label>
                         <input type="password" v-model="password" :maxlength="max_pass_length">
                     </div>
-                    <button type="submit">Register</button>
+                </form>
+
+
+                <div v-if="error.length > 0"> {{error}}</div>
+            </div>
+            <!-- Add tweet -->
+            <div class="updateBox" v-else>
+                <h2>Welcome {{ userData.name }} write your first Update</h2>
+                <form v-on:submit.prevent="sendUpdate">
+                    <div class="form_group">
+                        <label for="update">
+                            Send your update
+                            <span> {{ updateMsg.length + '/' + max_update }}</span>
+                        </label>
+                        <textarea name="update" id="update" cols="30" rows="10" v-model="updateMsg"
+                            maxlength="200"></textarea>
+                    </div>
+                    <button type="submit">Update</button>
                 </form>
             </div>
 
         </div>
-
-        <div v-if="error.length > 0">{{ error }}</div>
-
-        <!-- Add a tweet -->
-        <div v-else>Update Box</div>
-        <!-- Show all tweets -->
 
     </div>
     <!-- Link our main.js file -->
