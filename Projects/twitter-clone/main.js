@@ -69,6 +69,14 @@ let app = new Vue({
          if(localStorage.getItem('simple_update_registered_user')) {
                 this.userData = JSON.parse(localStorage.getItem('simple_update_registered_user'))
         }
+
+        /* Parse all tweets from the local storage  */
+        if(localStorage.getItem("simple_update_updates")) {
+            console.log("There is a list of updates");
+            this.updates = JSON.parse(localStorage.getItem('simple_update_updates'))
+        } else {
+            console.log("No updates here");
+        }
     
     }
 
