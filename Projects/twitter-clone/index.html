@@ -72,9 +72,12 @@
                     <h2>Updates</h2>
                     <div class="updateMsg" v-for="(update,index) in updates">
                         <p>{{ update.text }}</p>
-                    </div>
-                    <div class="updateDate">
-                        <i class="fas fa-calendar-alt fa-sm fa-fw"></i>{{update.date}}
+                        <div class="update_remove" @click="removeUpdate(index)">
+                            <span class="remove">Delete this update <i class="fas fa-trash fa-xs fa-fw"></i></span>
+                        </div>
+                        <div class="updateDate">
+                            <i class="fas fa-calendar-alt fa-sm fa-fw"></i>{{update.date}}
+                        </div>
                     </div>
                 </section>
                 <div v-else>No updates, check back later</div>

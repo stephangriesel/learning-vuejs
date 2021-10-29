@@ -57,6 +57,14 @@ let app = new Vue({
             /* Add to the local storage the stringified tweet object */
             localStorage.setItem('simple_update_updates', stringUpdates)
         },
+        removeUpdate(index) {
+            let removeIt = confirm("Are you sure you want to remove this update?")
+            if(removeIt) {
+                this.updates.splice(index,1);
+                /* remove from local storage */
+                localStorage.simple_update_updates = JSON.stringify(this.updates)
+            }
+        }
        
     },
 
