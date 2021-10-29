@@ -65,6 +65,21 @@
                 </form>
             </div>
 
+            <!-- Show all updates -->
+
+            <div class="card-updates">
+                <section class="updates" v-if="updates.length > 0">
+                    <h2>Updates</h2>
+                    <div class="updateMsg" v-for="(update,index) in updates">
+                        <p>{{ update.text }}</p>
+                    </div>
+                    <div class="updateDate">
+                        <i class="fas fa-calendar-alt fa-sm fa-fw"></i>{{update.date}}
+                    </div>
+                </section>
+                <div v-else>No updates, check back later</div>
+            </div>
+
         </div>
 
     </div>

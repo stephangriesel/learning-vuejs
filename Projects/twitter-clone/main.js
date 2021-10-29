@@ -12,7 +12,8 @@ let app = new Vue({
         error: "",
         registered: false,
         updateMsg: "",
-        update: []
+        update: [],
+        updates: []
     },
     methods: {
         registerAccount(){
@@ -67,7 +68,7 @@ let app = new Vue({
         // repopulate the userData object
          if(localStorage.getItem('simple_update_registered_user')) {
                 this.userData = JSON.parse(localStorage.getItem('simple_update_registered_user'))
-            }
+        }
     
     }
 
