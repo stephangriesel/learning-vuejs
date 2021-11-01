@@ -68,18 +68,22 @@
             <!-- Show all updates -->
 
             <div class="card-updates">
-                <section class="updates" v-if="updates.length > 0">
-                    <h2>Updates</h2>
-                    <div class="updateMsg" v-for="(update,index) in updates">
-                        <p>{{ update.text }}</p>
-                        <div class="update_remove" @click="removeUpdate(index)">
-                            <span class="remove">Delete this update <i class="fas fa-trash fa-xs fa-fw"></i></span>
-                        </div>
-                        <div class="updateDate">
-                            <i class="fas fa-calendar-alt fa-sm fa-fw"></i>{{update.date}}
-                        </div>
-                    </div>
-                </section>
+                <div v-if="updates.length > 0">
+                    <section class="updates">
+                        <h2>Updates</h2>
+                        <update-message v-for="(update, index) in updates" v-bind:update="update" :key="index"
+                            @remove-update="removeUpdate(index)"></update-message>
+                        <!-- <div class="updateMsg" v-for="(update,index) in updates">
+                            <p>{{ update.text }}</p>
+                            <div class="update_remove" @click="removeUpdate(index)">
+                                <span class="remove">Delete this update <i class="fas fa-trash fa-xs fa-fw"></i></span>
+                            </div>
+                            <div class="updateDate">
+                                <i class="fas fa-calendar-alt fa-sm fa-fw"></i>{{update.date}}
+                            </div>
+                        </div> -->
+                    </section>
+                </div>
                 <div v-else>No updates, check back later</div>
             </div>
 

@@ -1,3 +1,25 @@
+Vue.component('update-message', {
+    props: {
+        'tweet': Object,
+    },
+    template: `
+    <div class="updateMsg">
+        <p>
+            {{ update.text }}
+        </p>
+
+        <div class="update_remove" @click="$emit('remove-update', 'index')">
+            <span class="remove">Delete this update <i class="fas fa-trash fa-xs fa-fw"></i></span>
+        </div>
+
+        <div class="updateDate">
+            <i class="fas fa-calendar-alt fa-sm fa-fw"></i>{{update.date}}
+        </div>
+        
+    </div>
+    `
+})
+
 let app = new Vue({
     el: '#app',
     data: {
@@ -89,3 +111,4 @@ let app = new Vue({
     }
 
 });
+
