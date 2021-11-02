@@ -9,7 +9,7 @@ const Home = {
             <h3>Web Developer</h3>
             <p>Always curious </p>
     
-            <div class="skills_projects_link"><router-link to="/projects">Projects/Skills</router-link> </div>
+            <div class="skills_projects_link"><router-link to="/projects">Projects</router-link> </div>
         </div>
     </transition>
     </main>`
@@ -67,7 +67,7 @@ const Projects = {
                         </div>
                     
                     
-                    </div>
+                    </div>c 
 
 
                     <div style="text-align: center; width:100%" v-if="!loading" >
@@ -102,8 +102,7 @@ data() {
         perPage:999999999,
         page: 1,
         loading: true,
-        errors: false,
-        trans: 'Transition'
+        errors: false
         }
     },
     methods: {
