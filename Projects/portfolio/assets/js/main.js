@@ -2,6 +2,7 @@
 const Home = {
     template: 
     `<main id="home">
+    <transition appear name="fade">
         <div class="about__me">
             <img src="./assets/img/avatar.svg" alt="">
             <h1>Stephan Griesel</h1>
@@ -10,6 +11,7 @@ const Home = {
     
             <div class="skills_projects_link"><router-link to="/projects">Projects/Skills</router-link> </div>
         </div>
+    </transition>
     </main>`
 }
 const Projects = {
@@ -101,6 +103,7 @@ data() {
         page: 1,
         loading: true,
         errors: false,
+        trans: 'Transition'
         }
     },
     methods: {

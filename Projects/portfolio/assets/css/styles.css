@@ -13,7 +13,7 @@ a {
     color: white;
 } 
 a:hover {
-    color:#DB5461;
+    color:#549edb;
     
 }
 .loading {
@@ -36,7 +36,7 @@ a:hover {
 .bio__media__text h1{
     font-size: 36px;
     font-weight: 900;
-    color: #DB5461;
+    color: #549edb;
 
 }
 .bio__media__text p {
@@ -98,7 +98,7 @@ a:hover {
     cursor: pointer;
     background: #324555;
     color: white;
-    border-color: #DB5461;
+    border-color: #549edb;
     transition: 1s;
 }
 .card__custom__text h3 {
@@ -113,7 +113,7 @@ a:hover {
 }
 
 body{
-    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif;
     color: white;
     background: linear-gradient(116.82deg, #3D5467 0%, #1A232B 99.99%, #333333 100%);
 
@@ -137,10 +137,11 @@ main#home {
     line-height: 1.5rem;
 }
 #home > .about__me > h1 {
+    font-family: 'Indie Flower', cursive;
     margin: 20px 0 0;
     font-size: 36px;
     font-weight: 900;
-    color: #DB5461;
+    color: #549edb;
 }
 #home > .about__me > h3 {
     font-size: 28px;
@@ -170,7 +171,7 @@ main#home {
 
 }
 .skills_projects_link > a:hover {
-    color: #DB5461;
+    color: #549edb;
     transition: all 0.5s ease-in-out;
 
 }
@@ -184,7 +185,7 @@ main#home {
     content: "";
     width: 30px;
     height: 2px;
-    background-color: #DB5461;
+    background-color: #549edb;
     transition: background-color 0.5s ease-in-out;
 
 }
@@ -205,7 +206,7 @@ nav a {
     font-weight: 900;
 }
 nav a:hover {
-    color: #DB5461;
+    color: #549edb;
 }
 /* Portfolio Page Section */
 
@@ -248,7 +249,7 @@ nav a:hover {
 #skills_section ul  li {
     padding: 1rem;
     margin: 0.5rem;
-    background-color: #DB5461;
+    background-color: #549edb;
     border: 5px solid #3D5467;
     border-radius: 35px;
 }
@@ -270,6 +271,17 @@ nav a:hover {
 .rotate__card {
     transform: rotate3d(360,0,0,180deg);
 }
+
+/* Transitions */
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 2.5s ease-out;
+}
+
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+
 /* Site Footer */
 
 footer {
