@@ -9,16 +9,13 @@
 </head>
 
 <body>
-    <div id="app"> 
-        <div v-for="project in projects">
-            <h2 class="title">{{project.full_name}}</h2>
-            <div class="author">
-                <img :src="project.owner.avatar_url" width="50px" alt="me">
-            </div>
-            <div class="view">
-                <a :href="project.html_url">View</a>
-            </div>
-        </div>
+    <div id='app'>
+        <header>
+            <router-link to='/'>Home</router-link>
+            <router-link to='/projects'>Projects</router-link>
+        </header>
+
+        <router-view></router-view>
     </div>
 
     <!-- Axios latest version CDN -->
@@ -26,6 +23,10 @@
 
     <!-- VueJS development version -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <!-- Vue Router CDN -->
+    <script src="https://unpkg.com/vue-router@3.4.9/dist/vue-router.js"></script>
+
     <script src="./main.js"></script>
 </body>
 
